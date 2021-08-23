@@ -24,16 +24,24 @@ const game = {
 
 const girl = new Girl(50,400,50,100);
 
+
 document.addEventListener(`keydown`, (e)=> {
+
     context.clearRect(girl.x, girl.y,girl.w, girl.h);
 
     if (inGate()) {
+        
+        girl.draw();  
+        context.clearRect(25, 313,450, 147);
         startMiniGame();
+
     } else if (boy.contact(girl)) {
         dialogue.draw();
+        girl.draw();
         girl.y += 5;
         girl.x += 5;
     } else {
+        context.clearRect(25, 313,450, 147);
         switch(e.key) {
             case "ArrowUp":
                     girl.moveUp();
@@ -48,9 +56,10 @@ document.addEventListener(`keydown`, (e)=> {
                     girl.moveRight();
                     break;   
         }
+        girl.draw();  
     }
 
-    girl.draw();  
+    
 });
 
 function inGate() {
