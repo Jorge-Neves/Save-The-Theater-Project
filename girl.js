@@ -8,7 +8,7 @@ class Girl {
         this.h =h;
       
         const img = new Image();
-        img.src = "/images/create-a-pixel-art-avatar.png";
+        img.src = "/images/MCmain.png";
         this.image = img;
     }
 
@@ -34,7 +34,7 @@ class Girl {
 
 }
 
-const girl = new Girl(50,450,100,100);
+const girl = new Girl(50,400,50,100);
 
 document.addEventListener(`keydown`, (e)=> {
     switch(e.key) {
