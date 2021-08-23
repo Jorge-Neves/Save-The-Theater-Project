@@ -30,9 +30,10 @@ function updateCanvas() {
 game.start();
 
 function inGate() {
-    if (girl.top()< 69 && girl.left()>221 && girl.right()<310) {
+    if (girl.top()< 69 && girl.left()>200 && girl.right()<310) {
     console.log("in gate");
-    
+    game.clear();
+    startGame();
     //run game!
     }
 }
