@@ -17,9 +17,22 @@ const game = {
 }
 
 function updateCanvas() {
+    //dialogue.draw();
     girl.draw();
     boy.draw();
+    if (boy.contact(girl)) {
+        dialogue.draw();
+    }
+    inGate();
 }
 
 
 game.start();
+
+function inGate() {
+    if (girl.top()< 69 && girl.left()>221 && girl.right()<310) {
+    console.log("in gate");
+    
+    //run game!
+    }
+}

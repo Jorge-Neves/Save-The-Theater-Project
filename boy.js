@@ -30,16 +30,12 @@ class Npc {
         return this.x+this.w;
     }
 
-    checkContact (component) {
-        return! (this.bottom > component.top() ||
-        this.top() < component.bottom() ||
-        this.right() > component.left() ||
-        this.left() < component.right);
-
+    contact(component) {
+        return !(this.bottom() < component.top() ||
+        this.top() > component.bottom() ||
+        this.right() < component.left() ||
+        this.left() > component.right());
     }
-
-    
 }
 
 const boy = new Npc(50,50, 50,100);
-
