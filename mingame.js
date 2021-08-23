@@ -1,24 +1,5 @@
 
-class Silhouette {
-    const(x,y,w,h) {
-        this.x =x;
-        this.y =y;
-        this.w = w;
-        this.h =h;
-      
-        const img = new Image();
-        img.src = "/images/MCmain.png";
-        this.image = img;
-    }
-
-    draw() {
-        context.drawImage( this.image, this.x, this.y, this.w, this.h);
-    }
-}
-
-const silhouette = new Silhouette(200,250,100,100);
- 
-const letters = ["A","S","D","W"];
+ const letters = ["A","S","D","W"];
 let chosenLetter;
 
 function randomizeLetter() {
@@ -32,7 +13,7 @@ function showLetter(){
     context.drawImage(image, 100, 375, 50, 50);
 }
 
-function startGame() {
+function startMiniGame() {
     setInterval(()=>{
         context.clearRect(0,0,canvas.clientWidth,canvas.clientHeight);
         showLetter();
@@ -53,8 +34,3 @@ document.addEventListener("keydown", (e)=> {
         }
     }
 })
-
-
-function minGame() {
-    startGame();
-}

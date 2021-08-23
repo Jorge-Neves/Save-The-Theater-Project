@@ -8,8 +8,12 @@ class Girl {
         this.h =h;
       
         const img = new Image();
-        img.src = "/images/MCmain.png";
-        this.image = img;
+        img.src = "./images/MCMain.png";
+       
+        img.addEventListener("load", () => {
+            this.image = img;
+            this.draw();
+        })
     }
 
     draw() {
@@ -51,24 +55,5 @@ class Girl {
 
 }
 
-const girl = new Girl(50,400,50,100);
 
-document.addEventListener(`keydown`, (e)=> {
-    switch(e.key) {
-        case "ArrowUp":
-                girl.moveUp();
-                break;
-        case "ArrowDown":
-                girl.moveDown();
-                break;
-        case "ArrowLeft":
-                girl.moveLeft();
-                break;
-        case "ArrowRight":
-                girl.moveRight();
-                break;
-    }
-    context.clearRect(0,0,canvas.clientWidth, canvas.clientHeight);
-    girl.draw();   
-});
 

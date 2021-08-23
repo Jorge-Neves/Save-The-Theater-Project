@@ -7,7 +7,11 @@ class Npc {
       
         const img = new Image();
         img.src = "./images/Support.png";
-        this.image = img;
+       
+        img.addEventListener("load", () => {
+            this.image = img;
+            this.draw();
+        })
     }
 
     draw() {
