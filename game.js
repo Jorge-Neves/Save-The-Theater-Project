@@ -2,13 +2,14 @@ console.log("Game JS is connected!");
 
 const canvas = document.getElementById("myCanvas");
 const context = canvas.getContext("2d");
+
 const game = {
-
-
     clear: ()=> {
         context.clearRect(0,0,canvas.clientWidth, canvas.clientHeight);
     },
-}
+};
+    
+
 
 
 // function updateCanvas() {

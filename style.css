@@ -12,7 +12,7 @@
     text-align: center;
     width: 500px;
     align-self: center;
-   margin-left: 450px;
+   margin-left: 400px;
    padding-top: 250px;
 
 }
@@ -28,6 +28,9 @@
 
 .tittleButton{
     margin-left: 610px;
+}
+.playButton{
+    margin-left: 630px;
 
 }
 
@@ -38,6 +41,28 @@
     padding-top: 25px;
     align-self: center;
     margin-left:400px;
+}
+.titleBox1 {
+    align-self: center;
+    padding-top: 50px;
+    margin-left: 400px;
+}
+.row{
+    align-self: center;
+    margin-top: 100px;
+    margin-left: 400px;
+    margin-bottom:100px;
+}
+
+.gameOver {
+    display: none;
+    background-color: rgba(95, 20, 95, 0.596);
+    height: 250px;
+    width: 500px;
+    opacity: 90%;
+    padding-top: 60px;
+    text-align: center;
+    margin-left: 450px;
 }
 
 #myCanvas {
