@@ -1,66 +1,77 @@
+const letters = ["A", "S", "D", "W"];
+const left = ["I", "J", "K", "L"];
+// add right hand side letters
+let rLetter, lLetter, chosenLetter, score, counter, lives, levelOne, levelTwo, levelThree;
 
- const letters = ["A","S","D","W"];
- // add right hand side letters
-let chosenLetter;
-let lives = 3;
-let score;
+score = 0;
 
-
-function randomizeLetter() {
-    return letters[Math.floor(Math.random()*letters.length)];
+function randomizeLetter(array) {
+  return array[Math.floor(Math.random() * array.length)];
+  
 }
 
-function showLetter(){
-    context.clearRect(100,375,80,80);
-    chosenLetter = randomizeLetter();
-    const image = new Image();
-    image.src = `/images/${chosenLetter.toLowerCase()}.png`;
-    context.drawImage(image, 100, 375, 80, 80);
+function showLetter() {
+  context.clearRect(100, 375, 80, 80);
+  context.clearRect(300, 375, 80, 80);
+  rLetter = randomizeLetter(letters);
+  lLetter = randomizeLetter(left);
+  const imageR = new Image();
+  const imageL = new Image();
+  imageR.src = `/images/${rLetter.toLowerCase()}.png`;
+  imageL.src = `/images/${lLetter.toLowerCase()}.png`;
+  context.drawImage(imageR, 100, 375, 80, 80);
+  context.drawImage(imageL, 300, 375, 80, 80);
 }
 
 // para o right hand size context.drawImage(image, 400, 375, 80, 80);
 
+counter =0;
+
+let miniGameInterval;
+
 
 function startMiniGame() {
-    setInterval(()=>{
-        showLetter();
-    },1500);
-    
+
+  miniGameInterval = setInterval(() => {
+    showLetter();
+    counter ++;
+    if (counter >15) {
+        clearInterval(miniGameInterval);
+        context.clearRect(100, 375, 80, 80);
+        context.clearRect(300, 375, 80, 80);
+    }
+  }, 1500);
+return counter;
 }
 
-document.addEventListener("keydown", (e)=> {
-    switch(e.key) {
-        case "A":
-            return true;
-        break;
-        case "W":
-            return true;
-        break;
-        case "S":
-            return true;;
-        break;
-        case "D":
-            return true;
-        break;
-        case "I":
-            return true; 
-        break;
-        case "J":
-            return true;
-        break;
-        case "K":
-            return true;
-        break;
-        case "L":
-            return true;
-        break;
-    }
+let leave = setInterval(checkGameOver, 20);
 
-    if ((e.key) ===true) {
-            score +=150;
-            console.log(score);  
+function checkGameOver(){
+    if (lives<=0) {
+        console.log('game over!');
+        gameOver.style.display = "block";
+        clearInterval(leave);
+        return;
+    } 
+}
+
+
+const gameOver = document.querySelector("#over-canvas");
+lives =3;
+
+document.addEventListener("keydown", (e) => {
+    if (lLetter !== undefined && rLetter !== undefined) {
+        if (e.key.toLowerCase() === rLetter.toLowerCase() || e.key.toLowerCase() === lLetter.toLowerCase()) {
+            score += 150;
+            console.log("score:", score);
+           
+          } else {
+            lives -= 1;
+            console.log(lives);
+           /*  if (lives<=0) {
+                gameOver.style.display = "block";
+                return;
+            } */
+          }
     }
-    else {
-        lives -= 1;
-    }
-})
+});

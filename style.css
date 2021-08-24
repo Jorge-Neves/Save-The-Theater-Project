@@ -49,18 +49,16 @@
 }
 .row{
     align-self: center;
-    margin-top: 100px;
-    margin-left: 400px;
     margin-bottom:100px;
 }
 
 .gameOver {
-    display: none;
     background-color: rgba(95, 20, 95, 0.596);
+    position: absolute;
     height: 250px;
     width: 500px;
     opacity: 90%;
-    padding-top: 60px;
+    margin-top: 100px;
     text-align: center;
     margin-left: 450px;
 }
