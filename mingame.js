@@ -1,41 +1,66 @@
 
  const letters = ["A","S","D","W"];
+ // add right hand side letters
 let chosenLetter;
+let lives = 3;
+let score;
+
 
 function randomizeLetter() {
     return letters[Math.floor(Math.random()*letters.length)];
 }
 
 function showLetter(){
+    context.clearRect(100,375,80,80);
     chosenLetter = randomizeLetter();
     const image = new Image();
-    image.src = `/Mini-game/images/${chosenLetter.toLowerCase()}.png`;
-    context.drawImage(image, 100, 375, 50, 50);
+    image.src = `/images/${chosenLetter.toLowerCase()}.png`;
+    context.drawImage(image, 100, 375, 80, 80);
 }
+
+// para o right hand size context.drawImage(image, 400, 375, 80, 80);
+
 
 function startMiniGame() {
     setInterval(()=>{
-        context.clearRect(0,0,canvas.clientWidth,canvas.clientHeight);
         showLetter();
-    },2500)
+    },1500);
+    
 }
 
-let lives=3;
-let score = 0;
-
-
 document.addEventListener("keydown", (e)=> {
-    if ((e.key) === chosenLetter) {
-            score += 150;
-            console.log(score);
-            console.log("Score adding up!");
+    switch(e.key) {
+        case "A":
+            return true;
+        break;
+        case "W":
+            return true;
+        break;
+        case "S":
+            return true;;
+        break;
+        case "D":
+            return true;
+        break;
+        case "I":
+            return true; 
+        break;
+        case "J":
+            return true;
+        break;
+        case "K":
+            return true;
+        break;
+        case "L":
+            return true;
+        break;
+    }
+
+    if ((e.key) ===true) {
+            score +=150;
+            console.log(score);  
     }
     else {
         lives -= 1;
-        if (lives === 0 ) {
-            const go = new Image();
-            go.src = "/images/gameover.png";
-            context.drawImage(go, 250,250, 100,50);
-        }
     }
 })
