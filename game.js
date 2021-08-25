@@ -48,27 +48,11 @@ document.addEventListener(`keydown`, (e)=> {
         context.drawImage(image,25,313,450,147);
 
     } else if (boy.contact(girl)) {
-        /* dialogue.draw(); */
-        // fazr variavel a contar vezes que conversam
-        // se zero vezes fisrt, 1 vez second, 2 vezes 3rd 
-        switch(talking) {
-            case 0: 
-                firstDialogue();
-                talking ++;
-                        break;
-            case 1: 
-                secondDialogue();
-                talking ++;
-                        break;
-            case 2: 
-                thirdDialogue();
-                talking ++;
-
-                        break;
-        }
-        girl.y += 5;
-        girl.x += 5;
-        girl.draw();
+        context.clearRect(25, 313,450, 147);
+        const image1 = new Image();
+        image1.src = "/Dialogues/S3.PNG"
+        context.drawImage(image1,25,313,450,147);
+        
         
     } else {
         context.clearRect(25, 313,450, 147);
@@ -95,10 +79,12 @@ function inGate() {
         inside = true
         return inside;
     }
-
     return inside =false;
 }
+
+
 let levelUp = 0;
+
 document.addEventListener("keydown", (e) => {
     if(e.key =="x" && inside === true){
 
@@ -129,3 +115,31 @@ document.addEventListener("keydown", (e) => {
     }
 })
 
+document.addEventListener(`keydown`, (e)=> {
+    if (e.key == " " && boy.contact(girl)) {
+        switch(talking) {
+            case 0: 
+                firstDialogue();
+                talking ++;
+                
+                        break;
+            case 1: 
+            console.log("second dialogue")
+                secondDialogue();
+                talking ++;
+                
+               
+                        break;
+            case 2: 
+                thirdDialogue();
+                talking ++;
+               
+
+                        break;
+        }
+        girl.y += 5;
+        girl.x += 5;
+        girl.draw();
+        
+    }
+})

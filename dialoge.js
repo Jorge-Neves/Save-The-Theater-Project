@@ -1,8 +1,8 @@
 
 let imgCounter = 1;
 function firstDialogue() {
-    debugger;
-        if ( imgCounter >=5) {
+   /*  debugger; */
+        if ( imgCounter >5) {
             context.clearRect(25, 313,450, 147);
             return
         }
@@ -13,10 +13,13 @@ function firstDialogue() {
                 context.drawImage(image,25,313,450,147);
             })
         }
+
 }
 
 function secondDialogue() {
-    if ( imgCounter >=9) {
+    imgCounter = 6;
+    console.log('inside dialogue 2');
+    if ( imgCounter >9) {
         context.clearRect(25, 313,450, 147);
         return
     }
@@ -30,7 +33,8 @@ function secondDialogue() {
 }
 
 function thirdDialogue() {
-    if ( imgCounter >=15) {
+    imgCounter =10;
+    if ( imgCounter >13) {
         context.clearRect(25, 313,450, 147);
         return
     }

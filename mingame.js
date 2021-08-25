@@ -4,6 +4,7 @@ const left = ["I", "J", "K", "L"];
 let rLetter, lLetter, chosenLetter, score, counter, lives, levelOne, levelTwo, levelThree;
 lives =3;
 score = 0;
+let miniGameOn = false
 
 function randomizeLetter(array) {
   return array[Math.floor(Math.random() * array.length)];
@@ -31,6 +32,7 @@ let miniGameInterval;
 let letterPressed = false;
 ;
 function startMiniGame(t) {
+  miniGameOn = true
   lives =3;
 
   miniGameInterval = setInterval(() => {
@@ -43,6 +45,7 @@ function startMiniGame(t) {
         clearInterval(miniGameInterval);
         context.clearRect(100, 375, 80, 80);
         context.clearRect(300, 375, 80, 80);
+        miniGameOn = false
     }
     /* checkGameOver(); */
   }, t);
@@ -65,6 +68,7 @@ const gameOver = document.querySelector("#over-canvas");
 
 document.addEventListener("keydown", (e) => {
     letterPressed = true;
+    if (miniGameOn){
     if (lLetter !== undefined && rLetter !== undefined) {
         if (e.key.toLowerCase() === rLetter.toLowerCase() || e.key.toLowerCase() === lLetter.toLowerCase()) {
             score += 150;
@@ -78,5 +82,6 @@ document.addEventListener("keydown", (e) => {
             } */
           }
     }
+  }
     letterPressed = false;
 });
