@@ -37,13 +37,14 @@ document.addEventListener(`keydown`, (e)=> {
     context.clearRect(girl.x, girl.y,girl.w, girl.h);
 
     if (inGate()) {
-        
+        firstDialogue();
         girl.draw();  
         context.clearRect(25, 313,450, 147);
         startMiniGame();
         
     } else if (boy.contact(girl)) {
-        dialogue.draw();
+        /* dialogue.draw(); */
+        firstDialogue();
         girl.draw();
         girl.y += 5;
         girl.x += 5;
@@ -71,6 +72,7 @@ document.addEventListener(`keydown`, (e)=> {
 
 function inGate() {
     if (girl.top()< 69 && girl.left()>200 && girl.right()<310) {
+    girl.y +=5;
     console.log("in gate");
     game.clear();
     startMiniGame();
