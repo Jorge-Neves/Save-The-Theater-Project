@@ -1,31 +1,46 @@
 
-class Dialogue  {
-    constructor(txt) {
-        
-        const img = new Image();
-        img.src = "./images/full-box.png";
-        this.image = img;
-    }
-
-    draw() {
-        context.drawImage(this.image, 25, 313, 450, 147);
-    }
-}
-
-const dialogue = new Dialogue();
 let imgCounter = 1;
 function firstDialogue() {
-    if ( imgCounter >=5) {
+    debugger;
+        if ( imgCounter >=5) {
+            context.clearRect(25, 313,450, 147);
+            return
+        }
+        else {
+            const image = new Image();
+            image.src = `/Dialogues/D${imgCounter}.PNG`
+            image.addEventListener("load", () => {
+                context.drawImage(image,25,313,450,147);
+            })
+        }
+}
+
+function secondDialogue() {
+    if ( imgCounter >=9) {
         context.clearRect(25, 313,450, 147);
         return
     }
     else {
-        context.clearRect(25, 313,450, 147);
         const image = new Image();
         image.src = `/Dialogues/D${imgCounter}.PNG`
-        context.drawImage(image,25,313,450,147);
+        image.addEventListener("load", () => {
+            context.drawImage(image,25,313,450,147);
+        })
     }
-   
+}
+
+function thirdDialogue() {
+    if ( imgCounter >=15) {
+        context.clearRect(25, 313,450, 147);
+        return
+    }
+    else {
+        const image = new Image();
+        image.src = `/Dialogues/D${imgCounter}.PNG`
+        image.addEventListener("load", () => {
+            context.drawImage(image,25,313,450,147);
+        })
+    }
 }
 
 
@@ -41,7 +56,7 @@ document.addEventListener(`keydown`, (e) => {
         firstDialogue(imgCounter);
     }
     else if (e.key.toLowerCase() == "n"){
-        imgCounter ++;
+        imgCounter +=2;
         firstDialogue(imgCounter);
     }
 }
