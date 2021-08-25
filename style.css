@@ -1,7 +1,8 @@
 .game-border {
     background-image: url("/images/WebsiteBacground.jpg"); 
-    background-repeat: no-repeat;
-    background-size: 100%;
+    /* background-repeat: no-
+    repeat; */
+    background-size: cover;
     align-items: center;
     height: 650px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -12,8 +13,11 @@
     text-align: center;
     width: 500px;
     align-self: center;
-   margin-left: 400px;
-   padding-top: 250px;
+    justify-content: center;
+    margin-left: 28%;
+    padding-top: 15%;
+  /*  margin-left: 400px;
+   padding-top: 250px; */
 
 }
 
@@ -21,33 +25,43 @@
     text-align: center;
     width: 500px;
     align-self: center;
-    margin-left: 450px;
+    justify-content: center;
+    margin-left: 32%;
+ /*    margin-left: 450px;
     margin-bottom: 15px;
-    font-size: 10px;
+    font-size: 10px; */
 }
 
 .tittleButton{
-    margin-left: 610px;
+    margin-left: 43%;
+    justify-content: center;
+  /*   margin-left: 610px; */
 }
 .playButton{
-    margin-left: 630px;
+    justify-content: center;
+  /*   margin-left: 630px; */
 
 }
 
-.gameInterface {
-    margin-left: 450px;
-}
+/* .gameInterface {
+    
+} */
 .gameName {
-    padding-top: 25px;
+    padding-top: 1%;
     align-self: center;
-    margin-left:400px;
+    justify-content: center;
+    margin-left: 28%;
+    /* margin-left:400px; */
 }
 .titleBox1 {
+    justify-content: center;
     align-self: center;
     padding-top: 50px;
-    margin-left: 400px;
+   /*  margin-left: 400px; */
 }
 .row{
+
+    justify-content: center;
     align-self: center;
     margin-bottom:100px;
 }
@@ -60,11 +74,37 @@
     opacity: 90%;
     margin-top: 100px;
     text-align: center;
-    margin-left: 450px;
 }
 
 #myCanvas {
+    margin-top: 1.5%;
+    opacity: 100%;
     background-image: url("/images/theatreCanvas.png");
     align-self: center;
 }
 
+.row1{
+    background-color: rgba(218, 255, 154, 0.404);
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    margin-left: 14%;
+}
+
+#gameCredits{
+    font-size: 10px;
+}
+/* 
+.column {
+    display: table-cell;
+} */
+
+/* #sideBar {
+    height: 503px;
+    width: 200px;
+    opacity: 70%;
+}
+ */
