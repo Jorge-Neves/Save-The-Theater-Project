@@ -34,12 +34,18 @@ let isSecondDialog = false;
 let isThirdDialog = false;
 
 
+const firstScreen = new Image();
+firstScreen.src = `/Dialogues/S0.PNG`
+firstScreen.addEventListener("load", () => {
+    context.drawImage(firstScreen,25,200,450,147);
+})
+
 document.addEventListener(`keydown`, (e)=> {
     
     if (e.key !== "ArrowUp" && e.key !== "ArrowDown" && e.key !== "ArrowLeft" && e.key !== "ArrowRight") {
         return;
     }
-
+    context.clearRect(0,0, 500,500);
     context.clearRect(girl.x, girl.y,girl.w, girl.h);
     context.clearRect(boy.x, boy.y, boy.w, boy.h);
     boy.draw();
@@ -98,7 +104,7 @@ document.addEventListener("keydown", (e) => {
         switch(levelUp) {
             case 0: 
                 startMiniGame(1500);
-                levelUp ++;
+                levelUp ++;          
                         break;
             case 1: 
                 startMiniGame(1000);
