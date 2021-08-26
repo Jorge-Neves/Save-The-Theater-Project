@@ -13,9 +13,6 @@ const game = {
     
 };
     
-
-
-
 // function updateCanvas() {
 //     girl.draw();
 //     boy.draw();
@@ -94,29 +91,60 @@ function inGate() {
 
 let levelUp = 0;
 
+let miniGameDone = false;
+
+
 document.addEventListener("keydown", (e) => {
     if(e.key =="x" && inside === true){
 
         game.clear();
         girl.y=400;
         girl.x=50;
-        
+        debugger;
         switch(levelUp) {
+        
             case 0: 
+                const level1 = new Image();
+                level1.src = `/images/Level_1_button_pre_trans-removebg-preview.png`;
+                level1.addEventListener("load", () => {
+                context.drawImage(level1,150,10,170,50);
+                }); 
                 startMiniGame(1500);
-                levelUp ++;          
+                levelUp ++;
+                         
                         break;
             case 1: 
-                startMiniGame(1000);
+                const level2 = new Image();
+                level2.src = `/images/Level_2_button_pre_trans-removebg-preview.png`;
+                level2.addEventListener("load", () => {
+                context.drawImage(level2,150,10,170,50);
+                }); 
+                startMiniGame(1000);     
                 levelUp ++;
                         break;
             case 2: 
+            const level3 = new Image();
+            level3.src = `/images/level_3_button_pre_trans-removebg-preview.png`;
+            level3.addEventListener("load", () => {
+                context.drawImage(level3,150,10,170,50);
+                });
                 startMiniGame(500);
                 levelUp ++;
+                if (miniGameDone)
+        {  
+            
+            levelDone.addEventListener("load", () => {
+                context.drawImage(levelDone,25,200,450,147);
+                });
+        }
 
                         break;
             case 3: 
-                alert("youwin!")
+            const win = new Image();
+            win.src = `/Dialogues/end.PNG`;
+            win.addEventListener("load", () => {
+                context.drawImage(win,25,200,450,147);
+                });
                         break;
 
         }

@@ -45,6 +45,26 @@ function thirdDialogue() {
     }
 }
 
+document.addEventListener(`keydown`, (e)=> {
+    if (e.key === "Tab" && gameIsOver) {
+        girl.x = 50;
+        girl.y = 400;
+        score = 0;
+        lives =10;
+        miniGameOn = false;
+        gameIsOver = false;
+        talking = 0;
+        levelUp = 0;
+        isFirstDialog = false;
+        isSecondDialog = false;
+        isThirdDialog = false;
+        context.clearRect(0,0, 500, 500);
+        girl.draw();
+        boy.draw();
+        
+      }
+});
+
 
 document.addEventListener(`keydown`, (e) => {
     if ( (e.key).toLowerCase() =="n" && imgCounter === 3 ) {
@@ -89,28 +109,6 @@ document.addEventListener(`keydown`, (e) => {
 
     
 });
-
-document.addEventListener(`keydown`, (e)=> {
-    if (e.key === "Tab" && gameIsOver) {
-        girl.x = 50;
-        girl.y = 400;
-        score = 0;
-        lives =10;
-        miniGameOn = false;
-        gameIsOver = false;
-        talking = 0;
-        levelUp = 0;
-        isFirstDialog = false;
-        isSecondDialog = false;
-        isThirdDialog = false;
-        context.clearRect(0,0, 500, 500);
-        girl.draw();
-        boy.draw();
-        
-      }
-});
-
-
 
 document.addEventListener(`keydown`, (e) => {
     

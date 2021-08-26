@@ -33,7 +33,7 @@ let letterPressed = false;
 ;
 function startMiniGame(t) {
   miniGameOn = true
-  lives =10;
+  lives =10000;
 
   miniGameInterval = setInterval(() => {
     showLetter();
@@ -46,7 +46,8 @@ function startMiniGame(t) {
         clearInterval(miniGameInterval);
         context.clearRect(100, 375, 80, 80);
         context.clearRect(300, 375, 80, 80);
-        miniGameOn = false
+        miniGameDone =true;
+        miniGameOn = false;
     }
      /* checkGameOver();  */
   }, t);
@@ -68,7 +69,7 @@ let leave = setInterval(checkGameOver, 20);
     if (lives<0 ) {
       
       const gameOver = new Image();
-      gameOver.src = `/Dialogues/S4.PNG`
+      gameOver.src = `/Dialogues/S4.PNG`;
       gameOver.addEventListener("load", () => {
           context.drawImage(gameOver,25,313,450,147);
     }) 
@@ -89,7 +90,6 @@ document.addEventListener("keydown", (e) => {
             console.log("score:", score);         
           } else {
             lives -= 1;
-            console.log(lives);
           
           }
     }
