@@ -29,6 +29,9 @@ const game = {
 
 const girl = new Girl(50,400,50,100);
 let talking = 0;
+let isFirstDialog = false;
+let isSecondDialog = false;
+let isThirdDialog = false;
 
 
 document.addEventListener(`keydown`, (e)=> {
@@ -119,19 +122,26 @@ document.addEventListener(`keydown`, (e)=> {
     if (e.key == " " && boy.contact(girl)) {
         switch(talking) {
             case 0: 
+                isFirstDialog = true;
                 firstDialogue();
                 talking ++;
                 
                         break;
             case 1: 
             console.log("second dialogue")
-                secondDialogue();
-                talking ++;
+            isSecondDialog = true;
+            imgCounter++;
+            secondDialogue();
+            context.clearRect(25, 313,450, 147)
+            talking ++;
                 
                
                         break;
             case 2: 
+            isThirdDialog = true;
+                imgCounter++;
                 thirdDialogue();
+                context.clearRect(25, 313,450, 147)
                 talking ++;
                
 
