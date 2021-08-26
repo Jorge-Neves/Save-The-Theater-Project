@@ -52,6 +52,10 @@
 
 /* BD page classes*/
 
+#BDsec {
+    height: 140px;
+}
+
 .BDtitleBox1 {
     justify-content: center;
     align-self: center;
@@ -91,6 +95,30 @@
     text-align: center;
 }
 
+.BD-first-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    
+}
+
+.BD-middle-flex-inside-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#BDImageSize {
+    width: 500px;
+}
+
+#BDImageSize2 {
+    padding-top: 50px;
+    width: 500px;
+}
+
 
 /*.BDplayButton{
     /*justify-content: center;
@@ -115,8 +143,7 @@
 .titleBox1 {
     justify-content: center;
     align-self: center;
-    margin-left: 28%;
-    padding-top: 1%;
+    padding-top: 50px;
    /*  margin-left: 400px; */
 }
 .row{

@@ -21,17 +21,11 @@
 <body>
     <div class="container-fluid BDgame-border">
       <div class="row">
-        <div class="col-md-4 col-md-offset-3">
-          <div class="BDtitleBox1 BD-last-row" id="">
-            <div class= "BDtitleBox1">
-                <img src="/images/titulo.png"  alt="tittle"/>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-                  <div class="col-md-6 col-md-offset-3" id="seccao">
-                      <div id="carouselExampleControls" class="carousel slide" heigth="1000" data-interval="false">
+                  <div class="col-md-6 col-md-offset-3 BD-last-row" id="seccao">
+                    <div class= "BDtitleBox1">
+                      <img src="/images/titulo.png" id="BDsec" alt="tittle"/>
+                  </div>
+                      <div id="carouselExampleControls" class="carousel slide" data-interval="false">
                           <div class="carousel-inner">
                             <div class="carousel-item active">
                               <img src="images/Panel_1 V2.png"  class="d-block w-100" alt="Hand gripping pages">
@@ -58,27 +52,16 @@
                             <span class="visually-hidden">Next</span>
                           </button>
                         </div>
+                        <div class= "BDplayButton"> <!-- I want a play button -->
+                          <a href="/game.html"> <img id="playButton" src="/images/play.png" rel="playButton"> </a>
+                        </div>
+                        <div class="BDcredits">
+                          <p>Created by:</p>
+                          <p>Ana Correia & Paulo Santos</p>
+                          <p>©Ironhack 2021</p>
+                        </div>
                       </div>
-              </div>
-          <div class="row">
-                <div  class="col-md-2 col-md-offset-5">
-                  
-                </div> 
-          </div>
-          <div class="row">
-            <div  class="col-md-4 col-md-offset-3">
-              <div class="BD-last-row">
-                <div class= "BDplayButton"> <!-- I want a play button -->
-                  <a href="/game.html"> <img id="playButton" src="/images/play.png" rel="playButton"> </a>
-                </div>
-                <div class="BDcredits">
-                  <p>Created by:</p>
-                  <p>Ana Correia & Paulo Santos</p>
-                  <p>©Ironhack 2021</p>
-                </div>
-              </div>
-            </div> 
-        </div>
+              </div>      
   </div>
 </body>
 </html>
