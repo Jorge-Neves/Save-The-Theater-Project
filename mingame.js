@@ -1,8 +1,16 @@
 const letters = ["A", "S", "D", "W"];
 const left = ["I", "J", "K", "L"];
+
 // add right hand side letters
 let rLetter, lLetter, chosenLetter, score, counter, lives;
 score = 0;
+lives = 10;
+let scoreCount = document.querySelector("#scorecount");
+scoreCount.innerText = score;
+
+let liveCount = document.querySelector("#livecount");
+liveCount.innerText = lives;
+
 let miniGameOn = false;
 let gameIsOver = false;
 
@@ -33,7 +41,7 @@ let letterPressed = false;
 ;
 function startMiniGame(t) {
   miniGameOn = true
-  lives =10000;
+  lives =10;
 
   miniGameInterval = setInterval(() => {
     showLetter();
@@ -81,18 +89,18 @@ let leave = setInterval(checkGameOver, 20);
  const hitFail = new Audio("/music/fail-buzzer-04.mp3");
 
 
-
-
 document.addEventListener("keydown", (e) => {
     letterPressed = true;
     if (miniGameOn){
     if (lLetter !== undefined && rLetter !== undefined) {
         if (e.key.toLowerCase() === rLetter.toLowerCase() || e.key.toLowerCase() === lLetter.toLowerCase()) {
             score += 150;
+            scoreCount.innerText = score;
             hitWin.play();
             console.log("score:", score);         
           } else {
             lives -= 1;
+            liveCount.innerText = lives;
             hitFail.play();
           
           }

@@ -5,11 +5,33 @@
     background-size: cover;
     align-items: center;
     height: 650px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     color: white;
 }
 
+h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    color:rgba(59, 3, 59, 0.521);
+    font-style: bold;
+}
 
+h3 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+    color:rgba(59, 3, 59, 0.521);
+    font-style: bold;
+}
+
+.update {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-left: 30%;
+}
+
+#teclas {
+    height: 80px;
+    padding-bottom:10px;
+}
 
 .titleBox{
     text-align: center;
@@ -34,6 +56,19 @@
 
 }
 
+.tutorial {
+    background-color: rgba(59, 3, 59, 0.521);
+    height: 500px;
+    width: 250px;
+    margin-left: 5%;
+    margin-right: 20px;
+    padding-right: 10px;
+    text-align: justify;
+}
+
+.tutText {
+    padding-left: 3%;
+}
 
 
 .credits{
@@ -178,7 +213,8 @@
     justify-content: center;
     align-items: center;
     width: 1000px;
-   margin-left: 14%;
+    padding-left: 0%;
+    margin-left: 14%;
 }
 
 #gameCredits{
