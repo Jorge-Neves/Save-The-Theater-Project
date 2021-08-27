@@ -110,6 +110,18 @@ h3 {
     color: white;
 }
 
+.BD2game-border {
+    background-image: url("/images/WebsiteBacground\ -\ Cópia.jpg"); 
+    /* background-repeat: no-
+    repeat; */
+    background-size: cover;
+    align-items: center;
+    height: auto;
+    width: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
 .BDcredits{
     text-align: center;
    /* width: 500px;

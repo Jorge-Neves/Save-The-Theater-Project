@@ -77,10 +77,7 @@ function thirdDialogue() {
     }
 }
 
-
-
-document.addEventListener(`keydown`, (e)=> {
-    if (e.key === "Tab" && gameIsOver) {
+function restart() {
         girl.x = 50;
         girl.y = 400;
         score = 0;
@@ -95,9 +92,7 @@ document.addEventListener(`keydown`, (e)=> {
         context.clearRect(0,0, 500, 500);
         girl.draw();
         boy.draw();
-        
-      }
-});
+}
 
 
 document.addEventListener(`keydown`, (e) => {
@@ -111,6 +106,7 @@ document.addEventListener(`keydown`, (e) => {
                 setTimeout(()=> {
                 context.drawImage(gOver,25,313,450,147);
         },2500)   
+        setTimeout(()=>{restart()},5000);
       })
     }
     if ((e.key).toLowerCase() =="n" && imgCounter === 8 ) {
@@ -122,9 +118,9 @@ document.addEventListener(`keydown`, (e) => {
       gOver.addEventListener("load", () => {
             setTimeout(()=> {
             context.drawImage(gOver,25,313,450,147);
-        },1500)   
+        },2500)   
       })
-       
+      setTimeout(()=>{restart()},5000);
         
     }
     if ((e.key).toLowerCase() =="n" && imgCounter === 13) {
@@ -136,12 +132,11 @@ document.addEventListener(`keydown`, (e) => {
         gOver.addEventListener("load", () => {
                 setTimeout(()=> {
                 context.drawImage(gOver,25,313,450,147);
-        },1500)   
+        },2500)   
       })
+      setTimeout(()=>{restart()},5000);
         
     }
-
-    
 });
 
 document.addEventListener(`keydown`, (e) => {
