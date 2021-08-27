@@ -6,7 +6,16 @@ function firstDialogue() {
             context.clearRect(25, 313,450, 147);
             return
         }
-        else {
+        else if (imgCounter === 4) {
+            const image = new Image();
+            image.src = `/Dialogues/D${imgCounter}.PNG`
+            image.addEventListener("load", () => {
+                context.drawImage(image,25,313,450,147);
+            })
+            imgCounter ++;
+            return
+        }
+        else  {
             const image = new Image();
             image.src = `/Dialogues/D${imgCounter}.PNG`
             image.addEventListener("load", () => {
@@ -22,6 +31,14 @@ function secondDialogue() {
         context.clearRect(25, 313,450, 147);
         return
     }
+    else if (imgCounter === 9) {
+        const image = new Image();
+        image.src = `/Dialogues/D${imgCounter}.PNG`
+        image.addEventListener("load", () => {
+            context.drawImage(image,25,313,450,147);
+        })
+        imgCounter ++;
+        return }
     else {
         const image = new Image();
             image.src = `/Dialogues/D${imgCounter}.PNG`
@@ -36,6 +53,14 @@ function thirdDialogue() {
         context.clearRect(25, 313,450, 147);
         return
     }
+    else if (imgCounter === 14) {
+        const image = new Image();
+        image.src = `/Dialogues/D${imgCounter}.PNG`
+        image.addEventListener("load", () => {
+            context.drawImage(image,25,313,450,147);
+        })
+        imgCounter ++;
+        return }
     else {
         const image = new Image();
         image.src = `/Dialogues/D${imgCounter}.PNG`
