@@ -77,6 +77,8 @@ let leave = setInterval(checkGameOver, 20);
 }  
  }
 
+ const hitWin = new Audio ("/music/successsound.mp3");
+ const hitFail = new Audio("/music/fail-buzzer-04.mp3");
 
 
 
@@ -87,9 +89,11 @@ document.addEventListener("keydown", (e) => {
     if (lLetter !== undefined && rLetter !== undefined) {
         if (e.key.toLowerCase() === rLetter.toLowerCase() || e.key.toLowerCase() === lLetter.toLowerCase()) {
             score += 150;
+            hitWin.play();
             console.log("score:", score);         
           } else {
             lives -= 1;
+            hitFail.play();
           
           }
     }

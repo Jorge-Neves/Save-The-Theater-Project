@@ -1,3 +1,4 @@
+const talkSound = new Audio("/music/SFX_Girl_Voice.mp3");
 
 let imgCounter = 1;
 function firstDialogue() {
@@ -11,6 +12,7 @@ function firstDialogue() {
             image.src = `/Dialogues/D${imgCounter}.PNG`
             image.addEventListener("load", () => {
                 context.drawImage(image,25,313,450,147);
+                talkSound.play();
             })
             imgCounter ++;
             return
@@ -20,6 +22,7 @@ function firstDialogue() {
             image.src = `/Dialogues/D${imgCounter}.PNG`
             image.addEventListener("load", () => {
                 context.drawImage(image,25,313,450,147);
+                talkSound.play();
             })
         }
 
@@ -36,6 +39,7 @@ function secondDialogue() {
         image.src = `/Dialogues/D${imgCounter}.PNG`
         image.addEventListener("load", () => {
             context.drawImage(image,25,313,450,147);
+            talkSound.play();
         })
         imgCounter ++;
         return }
@@ -44,6 +48,7 @@ function secondDialogue() {
             image.src = `/Dialogues/D${imgCounter}.PNG`
             image.addEventListener("load", () => {
                 context.drawImage(image,25,313,450,147);
+                talkSound.play();
             })
     }
 }
@@ -58,6 +63,7 @@ function thirdDialogue() {
         image.src = `/Dialogues/D${imgCounter}.PNG`
         image.addEventListener("load", () => {
             context.drawImage(image,25,313,450,147);
+            talkSound.play();
         })
         imgCounter ++;
         return }
@@ -66,9 +72,12 @@ function thirdDialogue() {
         image.src = `/Dialogues/D${imgCounter}.PNG`
         image.addEventListener("load", () => {
             context.drawImage(image,25,313,450,147);
+            talkSound.play();
         })
     }
 }
+
+
 
 document.addEventListener(`keydown`, (e)=> {
     if (e.key === "Tab" && gameIsOver) {

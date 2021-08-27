@@ -1,9 +1,14 @@
+
 console.log("Game JS is connected!");
 let inside;
 
 const canvas = document.getElementById("myCanvas");
 const context = canvas.getContext("2d");
 document.querySelector("#over-canvas").style.display = 'none';
+
+const bgMusic = new Audio("/music/Animal Crossing Gamecube Full Theme Song (High Quality).mp3");
+
+
 
 const game = {
 
@@ -31,6 +36,8 @@ let isSecondDialog = false;
 let isThirdDialog = false;
 
 
+
+
 const firstScreen = new Image();
 firstScreen.src = `/Dialogues/S0.PNG`
 firstScreen.addEventListener("load", () => {
@@ -38,12 +45,14 @@ firstScreen.addEventListener("load", () => {
 })
 
 document.addEventListener(`keydown`, (e)=> {
+    setTimeout((bgMusic.play()), 1000);
     
     if (e.key !== "ArrowUp" && e.key !== "ArrowDown" && e.key !== "ArrowLeft" && e.key !== "ArrowRight") {
         return;
     }
     context.clearRect(0,0, 500,500);
     context.clearRect(girl.x, girl.y,girl.w, girl.h);
+    
     context.clearRect(boy.x, boy.y, boy.w, boy.h);
     boy.draw();
     
