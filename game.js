@@ -1,4 +1,4 @@
-
+/* const didWin = false; */
 console.log("Game JS is connected!");
 let inside;
 
@@ -177,6 +177,7 @@ document.addEventListener("keydown", (e) => {
 
                         break;
             case 3: 
+             /* didWin = true; */
             const win = new Image();
             win.src = `/Dialogues/end.PNG`;
             win.addEventListener("load", () => {
@@ -188,6 +189,17 @@ document.addEventListener("keydown", (e) => {
         
     }
 })
+
+/* if (didWin) {
+    const winButton = document.querySelector("#butao");
+    winButton.addEventListener(`click`, ()=>{
+        window.location.replace("/Pre-best-ending.html")
+    });
+}
+
+ */
+
+
 
 document.addEventListener(`keydown`, (e)=> {
     if (e.key == " " && boy.contact(girl)) {
