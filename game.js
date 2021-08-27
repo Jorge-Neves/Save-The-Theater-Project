@@ -39,10 +39,10 @@ let isThirdDialog = false;
 
 
 const firstScreen = new Image();
-firstScreen.src = `/Dialogues/S0.PNG`
+firstScreen.src = `/Dialogues/S0.PNG`;
 firstScreen.addEventListener("load", () => {
     context.drawImage(firstScreen,25,200,450,147);
-})
+});
 
 document.addEventListener(`keydown`, (e)=> {
     setTimeout((bgMusic.play()), 1000);
@@ -52,15 +52,44 @@ document.addEventListener(`keydown`, (e)=> {
     }
     context.clearRect(0,0, 500,500);
     context.clearRect(girl.x, girl.y,girl.w, girl.h);
-    
+
     context.clearRect(boy.x, boy.y, boy.w, boy.h);
     boy.draw();
     
     if (inGate()) {
-        context.clearRect(25, 313,450, 147);
-        const image = new Image();
-        image.src = "/Dialogues/S2.PNG"
-        context.drawImage(image,25,313,450,147);
+        if (isFirstDialog && talking ===1) {
+            context.clearRect(25, 313,450, 147);
+            const image = new Image();
+            image.src = "/Dialogues/S2.PNG"
+            context.drawImage(image,25,313,450,147);
+        }
+        else if (isSecondDialog && talking ===2) {
+            context.clearRect(25, 313,450, 147);
+            const image = new Image();
+            image.src = "/Dialogues/S2.PNG"
+            context.drawImage(image,25,313,450,147);
+        }
+        else if (isThirdDialog && talking ===3) {
+
+            context.clearRect(25, 313,450, 147);
+            const image = new Image();
+            image.src = "/Dialogues/S2.PNG"
+            context.drawImage(image,25,313,450,147);
+        }
+        else {
+            const order = new Image();
+            order.src = `/Dialogues/talk.PNG`;
+            order.addEventListener("load", () => {
+                context.drawImage(order,25,200,450,147);
+                    });
+                    girl.y=400;
+                    girl.x=50;
+                   setTimeout(()=>{girl.draw();
+                    boy.draw();},2000) ;
+                    
+        }
+        
+        
 
     } else if (boy.contact(girl)) {
         context.clearRect(25, 313,450, 147);
@@ -109,7 +138,6 @@ document.addEventListener("keydown", (e) => {
         game.clear();
         girl.y=400;
         girl.x=50;
-        debugger;
         switch(levelUp) {
         
             case 0: 

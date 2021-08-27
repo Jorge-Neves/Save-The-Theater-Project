@@ -89,6 +89,7 @@ function restart() {
         isFirstDialog = false;
         isSecondDialog = false;
         isThirdDialog = false;
+        imgCounter = 1;
         context.clearRect(0,0, 500, 500);
         girl.draw();
         boy.draw();
