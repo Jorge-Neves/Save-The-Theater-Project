@@ -23,7 +23,7 @@ Your choices during the dialogue portion will affect which ending you will get.
 Press the keys as they appear on the screen to win. Howeever, you will be penalized if you take too long pressing a key.
 
 # Live Demo
-https://savethetheatre2021.netlify.app/
+https://save-the-theater.netlify.app/
 
 
 # Technologies
