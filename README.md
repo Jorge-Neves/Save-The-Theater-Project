@@ -7,7 +7,7 @@ Made by Ana Correia and Paulo Santos.
 # Description
 Save a Theater was a project made to put our newly acquired Vanilla JS, Bootstrap, flexbox
 canvas, DOM manipulation (Document Object Model manipulation), and OOP 
-(object oriented programming) skills to the test. 
+(object-oriented programming) skills to the test. 
 To achieve that my project partner and I developed a short vintage RPG style game
 
 
